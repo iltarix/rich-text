@@ -1,0 +1,8 @@
+<div>
+ <div class='wrapper'>
+   <div class='container' [dragula]='"first-bag"'>
+      <app-card *ngFor="let card of cards" [content]="card.content" [id]="card.id"></app-card>
+   </div>
+ </div>
+ <button id='add-card-button' (click)="cards.push({content: 'new card', id: cards.length})">Add Card</button>
+</div>
