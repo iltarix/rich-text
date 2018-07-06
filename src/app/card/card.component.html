@@ -1,5 +1,5 @@
-<div class='card-container'>
-  <div class='card-content'>{{content}}</div>
-  <button id='card-edit-button' (click)='content="clicked " + id'>Edit</button>
-  <p id='card-id'>{{id}}</p>
-</div>
+<mat-card>
+  <h3>#{{id}}</h3>
+  <div [innerHTML]="content"></div>
+  <button mat-button id='editButton' (click)='sendOpenEditDialogNotification()'>EDIT</button>
+</mat-card>

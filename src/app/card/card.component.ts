@@ -9,11 +9,14 @@ export class CardComponent implements OnInit {
 
   @Input() content: any;
   @Input() id: number;
-  @Output() onEditCard = new EventEmitter<String>();
+  @Output() onEditCard = new EventEmitter<any>();
+  
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  sendOpenEditDialogNotification() {
+    console.log("edit card " + this.id + " clicked ");
+    this.onEditCard.emit(this);
   }
-
 }

@@ -1,3 +1,8 @@
-<div>
-  <ckeditor></ckeditor>
+<h1 mat-dialog-title>Card {{id}} Editor</h1>
+<div mat-dialog-content>
+  <div [froalaEditor]="editorOptions" [(froalaModel)]="editorContent"></div>
 </div>
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="onCancel()">CANCEL</button>
+    <button class="mat-raised-button mat-primary"(click)="onDone()">DONE</button>
+</mat-dialog-actions>

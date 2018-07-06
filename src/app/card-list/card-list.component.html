@@ -1,8 +1,7 @@
 <div>
- <div class='wrapper'>
-   <div class='container' [dragula]='"first-bag"'>
-      <app-card *ngFor="let card of cards" [content]="card.content" [id]="card.id"></app-card>
-   </div>
- </div>
- <button id='add-card-button' (click)="cards.push({content: 'new card', id: cards.length})">Add Card</button>
+  <h1>Cards 🃏</h1>
+  <button mat-raised-button (click)="cards.push({content: 'new card', id: cards.length})">ADD CARD</button>
+  <div [dragula]='"first-bag"'>
+    <app-card *ngFor="let card of cards" [content]="card.content" [id]="card.id" (onEditCard)="getOpenEditDialogNotification($event)"></app-card>
+  </div>
 </div>
